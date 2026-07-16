@@ -3,16 +3,21 @@
 
 schema: arc/v1
 type: skill
-namespace: metafactory
+namespace: "@metafactory"
 name: plan-breakdown
 version: 0.1.0
+tier: custom
+# License: Apache-2.0 (the org DD-13 default for our own repos — this is
+# Andreas/mellanon-authored and previously carried no LICENSE file). A matching
+# LICENSE file is included.
+license: Apache-2.0
 description: "Break a detailed plan or review into an epic + executor-grade sub-issues a less capable model can implement with high quality, then run the auto-dev loop and close with an implementation-vs-findings review."
 
 author:
   name: Andreas Aastroem
   github: mellanon
 
-repository: "the-metafactory/plan-breakdown"
+repository: "the-metafactory/metafactory-skill-plan-breakdown"
 
 # The skill is the operational front-end of compass sops/plan-breakdown.md
 # (frontier planning → executor-grade work). It is deliberately procedure-only:
@@ -21,7 +26,9 @@ repository: "the-metafactory/plan-breakdown"
 
 provides:
   skill:
-    - trigger: "plan breakdown"
+    - name: PlanBreakdown
+      path: skill/
+      trigger: "plan breakdown"
     - trigger: "break down this plan"
     - trigger: "work breakdown"
     - trigger: "turn findings into issues"
@@ -30,7 +37,17 @@ provides:
     - trigger: "frontier to executor handoff"
     - trigger: "hand this to the dev loop"
 
+# Full capability surface (arc/v1 requires this block with explicit empties).
+# The skill is procedure-only: it drives the GitHub CLI and the session task
+# list, holding no state of its own.
 capabilities:
+  filesystem:
+    read: []
+    write: []
   network:
     - host: github.com
       reason: "Creates/edits issues, epics, sub-issue links via gh CLI"
+  bash:
+    # Runs `gh` to create the epic + sub-issues and read/link them.
+    allowed: true
+  secrets: []
