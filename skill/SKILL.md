@@ -1,5 +1,5 @@
 ---
-name: plan-breakdown
+name: PlanBreakdown
 description: Break a detailed plan, review, or stocktake into an epic + executor-grade sub-issues a less capable model can implement with high quality, then run the auto-dev loop over them and close with an implementation-vs-findings review. USE WHEN break down this plan, plan breakdown, work breakdown, turn findings into issues, epic and sub-issues, make this executable by a smaller model, frontier to executor handoff, hand this to the dev loop, break down for Opus.
 ---
 
