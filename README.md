@@ -15,7 +15,7 @@ The one idea: **spend the planner's intelligence making the work executable with
 
 ## Canonical procedure
 
-The binding SOP lives in compass: [`sops/plan-breakdown.md`](https://github.com/the-metafactory/compass/blob/main/sops/plan-breakdown.md). It composes with [`sops/autonomous-work.md`](https://github.com/the-metafactory/compass/blob/main/sops/autonomous-work.md) and [`sops/in-session-dev-loop.md`](https://github.com/the-metafactory/compass/blob/main/sops/in-session-dev-loop.md) for the execution loop. The skill is self-contained enough to run without a compass checkout, but when the SOP and the skill disagree, the SOP wins.
+The binding SOP lives in compass-core: [`sops/plan-breakdown.md`](https://github.com/the-metafactory/compass-core/blob/main/sops/plan-breakdown.md). It composes with [`sops/autonomous-work.md`](https://github.com/the-metafactory/compass-core/blob/main/sops/autonomous-work.md) and [`sops/in-session-dev-loop.md`](https://github.com/the-metafactory/compass-core/blob/main/sops/in-session-dev-loop.md) for the execution loop. The skill is self-contained enough to run without a compass-core checkout, but when the SOP and the skill disagree, the SOP wins.
 
 ## Install
 

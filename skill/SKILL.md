@@ -5,7 +5,7 @@ description: Break a detailed plan, review, or stocktake into an epic + executor
 
 # /plan-breakdown — frontier planning → executor-grade work
 
-Canonical procedure: **compass `sops/plan-breakdown.md`** ([github.com/the-metafactory/compass/blob/main/sops/plan-breakdown.md](https://github.com/the-metafactory/compass/blob/main/sops/plan-breakdown.md)) — read it when a checkout is available; it is binding and this skill is its operational front-end. The execution loop it feeds: compass `sops/autonomous-work.md` (unattended) / `sops/in-session-dev-loop.md` (attended). Without a compass checkout, the procedure below is self-contained.
+Canonical procedure: **compass-core `sops/plan-breakdown.md`** ([github.com/the-metafactory/compass-core/blob/main/sops/plan-breakdown.md](https://github.com/the-metafactory/compass-core/blob/main/sops/plan-breakdown.md)) — read it when a checkout is available; it is binding and this skill is its operational front-end. The execution loop it feeds: compass-core `sops/autonomous-work.md` (unattended) / `sops/in-session-dev-loop.md` (attended). Without a compass-core checkout, the procedure below is self-contained.
 
 > **One line.** Spend the planner's intelligence making the work executable *without* it: every issue must stand alone — verified evidence, exact steps, binary acceptance, copy-pasteable verification — so the executor never has to be smart, only careful.
 
