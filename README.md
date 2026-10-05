@@ -13,6 +13,10 @@ The one idea: **spend the planner's intelligence making the work executable with
   4. **Execute** — hand-off to the consumer's dev-loop SOPs (unattended or in-session)
   5. **Close-out** — fresh-context implementation-vs-findings review back to the principal
 
+## Canonical skill
+
+This repo is the **canonical home of the `plan-breakdown` skill**. compass-core and other bundles declare it as an arc dependency instead of shipping a copy, so there's one skill to maintain and every install gets the same version.
+
 ## Canonical procedure
 
 The binding SOP lives in compass-core: [`sops/plan-breakdown.md`](https://github.com/the-metafactory/compass-core/blob/main/sops/plan-breakdown.md). It composes with [`sops/autonomous-work.md`](https://github.com/the-metafactory/compass-core/blob/main/sops/autonomous-work.md) and [`sops/in-session-dev-loop.md`](https://github.com/the-metafactory/compass-core/blob/main/sops/in-session-dev-loop.md) for the execution loop. The skill is self-contained enough to run without a compass-core checkout, but when the SOP and the skill disagree, the SOP wins.

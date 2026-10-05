@@ -5,7 +5,7 @@ schema: arc/v1
 type: skill
 namespace: "@metafactory"
 name: plan-breakdown
-version: 0.1.0
+version: 0.2.0
 tier: custom
 # License: Apache-2.0 (the org DD-13 default for our own repos — this is
 # Andreas/mellanon-authored and previously carried no LICENSE file). A matching

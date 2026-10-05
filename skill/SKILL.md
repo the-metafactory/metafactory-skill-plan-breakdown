@@ -1,5 +1,5 @@
 ---
-name: PlanBreakdown
+name: plan-breakdown
 description: Break a detailed plan, review, or stocktake into an epic + executor-grade sub-issues a less capable model can implement with high quality, then run the auto-dev loop over them and close with an implementation-vs-findings review. USE WHEN break down this plan, plan breakdown, work breakdown, turn findings into issues, epic and sub-issues, make this executable by a smaller model, frontier to executor handoff, hand this to the dev loop, break down for Opus.
 ---
 
@@ -37,7 +37,7 @@ Partition sub-issues into waves by three rules: (1) **file-overlap** — slices 
 
 ## Step 4 — run the loop
 
-Hand the waves to the consumer's dev loop (compass `autonomous-work.md` unattended / `in-session-dev-loop.md` attended). Breakdown-specific parameters:
+Hand the waves to the consumer's dev loop (compass-core `sops/autonomous-work.md` unattended / `sops/in-session-dev-loop.md` attended). Breakdown-specific parameters:
 
 - **Executor model** = the cheaper tier the principal named. The planner session stays orchestrator — dispatch, gate, merge, narrate — and NEVER implements. If a brief needs to teach beyond the issue, fix the issue.
 - **Implementer briefs**: worktree from `origin/main`; "gh issue view {N} — it contains exact steps"; verify-before-change; scoped tests + typecheck only (never the full suite in a fresh worktree); push the branch, do NOT merge, do NOT open the PR; structured report-back (branch, files, test output, residual risk).
