@@ -9,9 +9,21 @@ The one idea: **spend the planner's intelligence making the work executable with
 - **`skill/SKILL.md`** — the `/plan-breakdown` skill: a five-phase operational procedure
   1. **Deep review** — fan-out reviewers + adversarial refutation of every gap claim, pinned to `origin/main`
   2. **Work breakdown** — epic (demonstrable Definition-of-Done, stocktake matrix, working-notes-for-executors) + sub-issues held to the executor-grade bar
-  3. **Wave task list** — partitioned by file-overlap, trust-path serialization, dependency order
-  4. **Execute** — hand-off to the consumer's dev-loop SOPs (unattended or in-session)
-  5. **Close-out** — fresh-context implementation-vs-findings review back to the principal
+  3. **Wave task list** — partitioned by file-overlap, trust-path serialization, dependency order; derived with `dlm sync <epic>`
+  4. **Execute** — briefs from `dlm drive`, handed to the consumer's dev-loop SOPs (unattended or in-session)
+  5. **Close-out** — `dlm closeout`, then a fresh-context implementation-vs-findings review back to the principal
+
+Every sub-issue carries a fenced `yaml dlm` **machine block** — the contract [dev-loop-machine](https://github.com/the-metafactory/dev-loop-machine) reads to derive the task list, render implementer briefs and re-run acceptance predicates.
+
+## Checking the skill against dlm
+
+`skill/SKILL.md`'s machine-block example and `test/fixtures/` are run through dev-loop-machine's own tracker adapter and sync derivation, at the commit pinned in `scripts/dlm-pin`:
+
+```bash
+bash scripts/check-machine-block.sh        # needs bun, git, and read access to dev-loop-machine
+```
+
+It exits 0 when the example derives a `ready` unit and every bad fixture is refused with its expected note. To move to a newer dlm: put its sha in `scripts/dlm-pin`, run the script, fix the example or fixtures until it exits 0, and name the sha in `CHANGELOG.md`.
 
 ## Canonical skill
 
@@ -26,8 +38,10 @@ The binding SOP lives in compass-core: [`sops/plan-breakdown.md`](https://github
 Via arc (metafactory hosts):
 
 ```bash
-arc install plan-breakdown
+arc install https://github.com/the-metafactory/plan-breakdown
 ```
+
+Blocked while compass-core 0.6.x ships its own copy at the same install path (arc refuses a second writer); compass-core 0.7.0 drops it.
 
 Manual (any Claude Code setup): symlink or copy `skill/` to `~/.claude/skills/plan-breakdown/`.
 

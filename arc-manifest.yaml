@@ -5,7 +5,7 @@ schema: arc/v1
 type: skill
 namespace: "@metafactory"
 name: plan-breakdown
-version: 0.2.0
+version: 0.3.0
 tier: custom
 # License: Apache-2.0 (the org DD-13 default for our own repos — this is
 # Andreas/mellanon-authored and previously carried no LICENSE file). A matching
@@ -17,12 +17,14 @@ author:
   name: Andreas Aastroem
   github: mellanon
 
-repository: "the-metafactory/metafactory-skill-plan-breakdown"
+repository: "the-metafactory/plan-breakdown"
 
 # The skill is the operational front-end of compass sops/plan-breakdown.md
-# (frontier planning → executor-grade work). It is deliberately procedure-only:
-# no scripts, no state — everything it does runs through `gh`, the session task
-# list, and the consumer's own dev-loop SOPs.
+# (frontier planning → executor-grade work). It is procedure-only and holds no
+# state: it runs through `gh` and dev-loop-machine's `dlm` CLI (sync / next /
+# drive / release / closeout), which own the derived task list and briefs.
+# scripts/ is a repo-side check (the skill's machine-block example against
+# dlm's parser at a pinned commit); it is not installed with the skill.
 
 provides:
   skill:
@@ -48,6 +50,7 @@ capabilities:
     - host: github.com
       reason: "Creates/edits issues, epics, sub-issue links via gh CLI"
   bash:
-    # Runs `gh` to create the epic + sub-issues and read/link them.
+    # Runs `gh` to create the epic + sub-issues and read/link them, and the
+    # consumer's `dlm` (dev-loop-machine) to sync, claim and brief units.
     allowed: true
   secrets: []
