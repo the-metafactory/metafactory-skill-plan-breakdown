@@ -10,7 +10,7 @@ Written for [dev-loop-machine#11](https://github.com/the-metafactory/dev-loop-ma
 - **Waves dlm can read.** Step 3: the wave table stays a comment on the epic for humans; dependencies are also written where dlm reads them (GitHub issue dependencies or a `Blocked by: #n` line on each sub-issue), and the task list is derived with `dlm sync <epic>` instead of hand-mirrored.
 - **Briefs from dlm.** Step 4 quotes dlm's usage text verbatim and says what `dlm sync`, `dlm next`, `dlm drive` and `dlm release` do; implementer briefs are the files `dlm drive` writes, and holds go in each block's `holds:`. Step 5 starts with `dlm closeout <epic>`.
 - **Check.** `scripts/check-machine-block.sh` runs dlm's own tracker adapter and `derive()` (pinned in `scripts/dlm-pin`) over the skill's example and `test/fixtures/`; the bad fixtures must be refused.
-- **Manifest.** `repository:` names `the-metafactory/plan-breakdown` (it named `metafactory-skill-plan-breakdown`).
+- **Manifest.** `repository:` kept as `the-metafactory/metafactory-skill-plan-breakdown`: #11 called it wrong, but that is the repo's canonical GitHub name and `the-metafactory/plan-breakdown` is a redirect to it (verified 2026-10-13). Version 0.3.0.
 
 ## 0.2.0
 

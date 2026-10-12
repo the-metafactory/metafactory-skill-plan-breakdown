@@ -38,7 +38,7 @@ The binding SOP lives in compass-core: [`sops/plan-breakdown.md`](https://github
 Via arc (metafactory hosts):
 
 ```bash
-arc install https://github.com/the-metafactory/plan-breakdown
+arc install https://github.com/the-metafactory/metafactory-skill-plan-breakdown
 ```
 
 Blocked while compass-core 0.6.x ships its own copy at the same install path (arc refuses a second writer); compass-core 0.7.0 drops it.

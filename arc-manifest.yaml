@@ -17,7 +17,9 @@ author:
   name: Andreas Aastroem
   github: mellanon
 
-repository: "the-metafactory/plan-breakdown"
+# Canonical GitHub name (verified 2026-10-13: `gh repo view
+# the-metafactory/plan-breakdown` resolves here; the short name is a redirect).
+repository: "the-metafactory/metafactory-skill-plan-breakdown"
 
 # The skill is the operational front-end of compass sops/plan-breakdown.md
 # (frontier planning → executor-grade work). It is procedure-only and holds no
